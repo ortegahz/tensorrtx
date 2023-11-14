@@ -3,3 +3,8 @@
 */*.wts
 */*.ppm
 *idea*
+yolov5/coco_calib/
+
+yolov5/yolov5s\.pt
+
+\.vscode/

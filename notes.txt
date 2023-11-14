@@ -1,0 +1,11 @@
+# nfs
+mount -t nfs 172.20.20.14:/home/manu/nfs /mnt/nfs_manu -o nolock
+
+# ssh
+ssh -p 51234 root@172.20.20.93
+ssh -p 51234 root@172.20.20.133
+QNXFzhyh@JBUFA666
+
+# yolov5
+./yolov5_det -s ../yolov5s.wts yolov5s.engine s
+./yolov5_det -d yolov5s.engine ../images

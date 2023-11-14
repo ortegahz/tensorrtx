@@ -353,7 +353,7 @@ ICudaEngine* build_det_engine(unsigned int maxBatchSize, IBuilder* builder, IBui
   std::cout << "Your platform support int8: " << (builder->platformHasFastInt8() ? "true" : "false") << std::endl;
   assert(builder->platformHasFastInt8());
   config->setFlag(BuilderFlag::kINT8);
-  Int8EntropyCalibrator2* calibrator = new Int8EntropyCalibrator2(1, kInputW, kInputH, "./coco_calib/", "int8calib.table", kInputTensorName);
+  Int8EntropyCalibrator2* calibrator = new Int8EntropyCalibrator2(1, kInputW, kInputH, "../coco_calib/", "int8calib.table", kInputTensorName);
   config->setInt8Calibrator(calibrator);
 #endif
 

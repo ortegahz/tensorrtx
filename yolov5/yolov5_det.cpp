@@ -196,6 +196,8 @@ int main(int argc, char** argv) {
     auto end = std::chrono::system_clock::now();
     std::cout << "inference time: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << "ms" << std::endl;
 
+    goto RELEASE;
+
     // NMS
     std::vector<std::vector<Detection>> res_batch;
     batch_nms(res_batch, cpu_output_buffer, img_batch.size(), kOutputSize, kConfThresh, kNmsThresh);
@@ -209,6 +211,7 @@ int main(int argc, char** argv) {
     }
   }
 
+RELEASE:
   // Release stream and buffers
   cudaStreamDestroy(stream);
   CUDA_CHECK(cudaFree(gpu_buffers[0]));
